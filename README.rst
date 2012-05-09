@@ -7,7 +7,7 @@ templates.
 Requirements
 ============
 
-Django 1.4 (it work with older versions, but I haven't tested this)
+Django 1.4 (it may work with older versions, but I haven't tested this)
 
 Installation
 ============
