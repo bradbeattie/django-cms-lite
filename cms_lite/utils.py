@@ -10,7 +10,7 @@ def get_cms_pages(base_dir="cms_lite", sub_dirs=[]):
         cms_lite_dir = os.path.join(app_template_dir, "cms_lite", *sub_dirs)
         for root, subFolders, files in os.walk(cms_lite_dir):
             templates.extend([
-                reverse("cms_lite_render_template", args=[
+                reverse("cms_lite_page", args=[
                     re.sub(r"_", "-", re.sub(r"\/?index", "", re.sub(r"\.html$", "", os.path.relpath(os.path.join(root, f), cms_lite_dir))))
                 ])
                 for f in files

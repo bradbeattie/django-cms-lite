@@ -16,7 +16,7 @@ def render_template(request, name="index"):
     if "_" in name:
         return redirect(
             reverse(
-                "cms_lite_render_template",
+                "cms_lite_page",
                 args=[name.replace("_", "-")],
             ),
             permanent=True,
