@@ -12,10 +12,7 @@ class CMSLiteSitemap(Sitemap):
         return None
 
     def location(self, obj):
-        if not obj:
-            return "/"
-        else:
-            return "/" + obj + "/"
+        return obj
 
     def priority(self, obj):
-        return (0.9 - obj.count("/") * 0.1) if obj else 1.0
+        return (1.0 - obj.count("/") * 0.1)
