@@ -6,6 +6,7 @@ from django.shortcuts import redirect, render_to_response
 from django.template import RequestContext, TemplateDoesNotExist
 from django.template.loaders.filesystem import Loader
 from django.views.decorators.http import require_http_methods
+import codecs
 import os
 
 
@@ -30,7 +31,7 @@ def render_template(request, name="index"):
             source, abspath = Loader().load_template_source(filename)
             form = forms.CmsPageForm(data=request.POST or None)
             if form.is_valid():
-                with open(abspath, "w") as f:
+                with codecs.open(abspath, encoding="utf-8", mode="w") as f:
                     f.write(form.cleaned_data["source"])
                 messages.success(request, "CMS page updated")
                 return redirect(request.META.get("PATH_INFO"))
