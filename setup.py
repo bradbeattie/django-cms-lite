@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-cms-lite',
-    version='2013.04.03.0',
+    version='2013.05.13.0',
     description='Simple Django CMS with very limited functionality.',
     long_description='Renders discovered HTML tempaltes as CMS pages.',
     author='Brad Beattie',
