@@ -1,12 +1,12 @@
 from django.core.urlresolvers import reverse
-from django.template.loaders.app_directories import app_template_dirs
+from django.template.utils import get_app_template_dirs
 import os
 import re
 
 
 def get_cms_pages(base_dir="cms_lite", sub_dirs=[]):
     templates = []
-    for app_template_dir in app_template_dirs:
+    for app_template_dir in get_app_template_dirs("templates"):
         cms_lite_dir = os.path.join(app_template_dir, "cms_lite", *sub_dirs)
         for root, subFolders, files in os.walk(cms_lite_dir):
             templates.extend([
